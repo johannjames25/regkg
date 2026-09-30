@@ -14,6 +14,7 @@ from regkg.semantic import run_semantic
 from regkg.knowledge import build_needs, requirement_profile, source_ranking
 from regkg.graph import build_graph, export_json, draw
 from regkg.evaluate import evaluate
+from regkg.demo import build_demo
 
 
 def pipeline(reg_path, brd_path, llm):
@@ -60,6 +61,8 @@ def main():
         w = csv.DictWriter(f, fieldnames=list(profile[0].keys()))
         w.writeheader(); w.writerows(profile)
 
+    build_demo(f"{a.out}/demo.html", clauses, brd, anchors, needs, semantic, profile, ev_det, ev_full)
+
     ranking = source_ranking(needs)
     summary = {"graph": {"nodes": G.number_of_nodes(), "edges": G.number_of_edges()},
                "anchors": sum(len(v) for v in anchors.values()),
@@ -83,6 +86,7 @@ def main():
             print(f"[{name}] recall {ev['found']}/{ev['total']} = {ev['recall']:.0%}, "
                   f"precision {ev['precision']:.0%} of {ev['needs']} needs, by nature {ev['by_nature']}, missed {ev['missed']}")
     print("Top sources:", ranking[:5])
+    print(f"Open {a.out}/demo.html in a browser for the interactive demo.")
 
 
 if __name__ == "__main__":

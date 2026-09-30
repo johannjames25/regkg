@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BRD knowledge gaps: demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F4F6; --surface:#FFFFFF; --ink:#17212C; --muted:#5A6572; --rule:#D6DCE2;
+  --reg:#0D7A68; --reg-t:#D5EFE8; --brd:#2E58A6; --brd-t:#DCE5F6; --none:#B2432A; --none-t:#F8DCD2;
+  --p2:#9A6400; --p2-t:#F6E9CC; --focus:#2E58A6;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12181F; --surface:#1A222B; --ink:#E6EBF0; --muted:#9AA6B2; --rule:#2E3945;
+  --reg:#5CC9B3; --reg-t:#153A34; --brd:#8FB0EC; --brd-t:#1E2F4D; --none:#F08C73; --none-t:#46221A;
+  --p2:#E2B45A; --p2-t:#3D2F12; --focus:#8FB0EC;}}
+:root[data-theme="dark"]{
+  --bg:#12181F; --surface:#1A222B; --ink:#E6EBF0; --muted:#9AA6B2; --rule:#2E3945;
+  --reg:#5CC9B3; --reg-t:#153A34; --brd:#8FB0EC; --brd-t:#1E2F4D; --none:#F08C73; --none-t:#46221A;
+  --p2:#E2B45A; --p2-t:#3D2F12; --focus:#8FB0EC;}
+*,*::before,*::after{box-sizing:inherit}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--sans)}
+header{max-width:1120px;margin:0 auto;padding:32px 24px 8px}
+h1{font:600 28px/1.2 var(--serif);margin:0 0 8px;letter-spacing:-.01em}
+.lede{color:var(--muted);max-width:70ch;margin:0 0 16px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13.5px;color:var(--muted);margin-bottom:16px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:14px;height:14px;border-radius:3px;display:inline-block}
+nav{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;gap:4px;border-bottom:1px solid var(--rule)}
+nav button{font:500 14px var(--sans);color:var(--muted);background:none;border:0;padding:10px 14px;border-bottom:2px solid transparent;cursor:pointer}
+nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+main{max-width:1120px;margin:0 auto;padding:20px 24px 48px}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:4px}
+.split{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+.list{display:flex;flex-direction:column;gap:2px;position:sticky;top:12px}
+.list button{display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:8px;text-align:left;
+  background:none;border:0;border-radius:6px;padding:8px 10px;font:14px var(--sans);color:var(--ink);cursor:pointer}
+.list button:hover{background:var(--surface)}
+.list button[aria-current="true"]{background:var(--surface);box-shadow:inset 3px 0 0 var(--ink)}
+.rid{color:var(--muted);font-variant-numeric:tabular-nums}
+.lvl{font-size:12px;font-weight:600;padding:1px 7px;border-radius:10px}
+.P0{color:var(--reg);background:var(--reg-t)} .P1{color:var(--brd);background:var(--brd-t)}
+.P2{color:var(--p2);background:var(--p2-t)} .P3{color:var(--none);background:var(--none-t)}
+.panel{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:24px 28px}
+.panel h2{font:600 13px var(--sans);color:var(--muted);margin:26px 0 8px}
+.panel h2:first-child{margin-top:0}
+.reqhead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.reqhead h3{font:600 20px/1.3 var(--serif);margin:0}
+.doc{font:18px/1.75 var(--serif);max-width:68ch;margin:0}
+.m-reg{background:var(--reg-t);box-shadow:inset 0 -2px 0 var(--reg);border-radius:2px}
+.m-brd{background:var(--brd-t);box-shadow:inset 0 -2px 0 var(--brd);border-radius:2px}
+.m-none{background:var(--none-t);box-shadow:inset 0 -2px 0 var(--none);border-radius:2px}
+.u{text-decoration:underline wavy var(--none);text-underline-offset:4px;text-decoration-thickness:1.5px}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.link{font-size:13.5px;border:1px solid var(--rule);border-radius:6px;padding:6px 10px;max-width:100%}
+.link b{font-weight:600}
+.rel-contradicts{border-color:var(--none);color:var(--none)}
+.twin{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:760px){.twin{grid-template-columns:1fr}}
+.twin div{font:15.5px/1.6 var(--serif);border-left:3px solid var(--rule);padding:2px 0 2px 14px}
+.twin div.reg{border-left-color:var(--reg)}
+.twin small{display:block;font:500 12.5px var(--sans);color:var(--muted);margin-bottom:4px}
+.gaps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.gap{border:1px solid var(--rule);border-radius:8px;padding:14px 16px}
+.gap.conflict{border-color:var(--none)}
+.gtop{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px;font-size:13px;color:var(--muted)}
+.gtop .type{color:var(--ink);font-weight:600;font-size:14px}
+.flag{color:var(--none);font-weight:600}
+.gap p{margin:4px 0}
+.src{font-size:14px}
+.src b{font-weight:600}
+.q{font-style:italic;color:var(--muted)}
+.empty{color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:13px}
+.st{font-size:12px;font-weight:600;padding:1px 8px;border-radius:10px;white-space:nowrap}
+.st-full{color:var(--reg);background:var(--reg-t)} .st-partial{color:var(--p2);background:var(--p2-t)} .st-none{color:var(--none);background:var(--none-t)}
+.scroll{overflow-x:auto}
+.note{color:var(--muted);font-size:14px;max-width:72ch}
+</style>
+</head>
+<body>
+<header>
+  <h1>What does this BRD know that the regulation doesn't?</h1>
+  <p class="lede" id="lede"></p>
+  <div class="legend">
+    <span><i class="sw m-reg"></i>Comes from the regulation</span>
+    <span><i class="sw m-brd"></i>Explained in the BRD</span>
+    <span><i class="sw m-none"></i>No source found</span>
+    <span><span class="u">wavy line</span> A decision nobody explained</span>
+  </div>
+</header>
+<nav role="tablist" aria-label="Views">
+  <button role="tab" aria-selected="true" data-view="reqs">Requirements</button>
+  <button role="tab" aria-selected="false" data-view="cov">Regulation coverage</button>
+  <button role="tab" aria-selected="false" data-view="score">How well it did</button>
+</nav>
+<main id="view"></main>
+<script>
+const D = /*__DATA__*/null;
+const LV = {P0:"From the regulation",P1:"Explained in BRD",P2:"Missing artifact",P3:"Unstated decision"};
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const clauseText = id => (D.clauses.find(c => c.id === id) || {}).text || "";
+let current = D.reqs[0].id;
+
+document.getElementById("lede").textContent =
+  `A synthetic regulation and a BRD written from it. The tool checks every concrete detail in each requirement against the regulation, `+
+  `and flags what neither document explains. Only ${D.counts.P0} of ${D.reqs.length} requirements trace fully to the regulation; `+
+  `it found ${D.nNeeds} knowledge gaps in all.`;
+
+function reqView(){
+  const r = D.reqs.find(x => x.id === current);
+  const list = D.reqs.map(x => `<button data-req="${x.id}" aria-current="${x.id===current}">
+      <span class="rid">${x.id}</span><span>${esc(x.title)}</span><span class="lvl ${x.level}" title="${LV[x.level]}">${x.level}</span></button>`).join("");
+  const text = r.segs.map(s => {
+    let t = esc(s.t);
+    if (s.u) t = `<span class="u">${t}</span>`;
+    if (s.m) t = `<span class="m-${s.m}" title="${esc(s.tip)}">${t}</span>`;
+    return t;
+  }).join("");
+  const links = r.links.length ? r.links.map(l => `<div class="link rel-${l.relation}"><b>${l.clause}</b> ${l.relation}
+      <span style="color:var(--muted)">: ${esc(clauseText(l.clause))}</span></div>`).join("") : `<p class="empty">No clause links found.</p>`;
+  const twin = r.twin ? `<div class="twin"><div class="reg"><small>Written from the regulation alone</small>${esc(r.twin)}</div>
+      <div><small>What the BRD actually says</small>${esc(r.text)}</div></div>` : "";
+  const gaps = r.gaps.length ? `<ul class="gaps">${r.gaps.map(g => `<li class="gap ${g.conflict?'conflict':''}">
+      <div class="gtop"><span class="type">${esc(g.type)}</span><span class="lvl ${g.level}">${g.level} ${LV[g.level]}</span>
+      ${g.conflict?'<span class="flag">Conflicts with the regulation</span>':''}<span>found by ${g.by.replace('anchor','rules').replace('semantic','LLM')}</span></div>
+      <p>${esc(g.what)}${g.evidence.length?` <span style="color:var(--muted)">(${esc(g.evidence.join(', '))})</span>`:''}</p>
+      <p class="src">Likely source: <b>${esc(g.source)}</b>${g.others.length?`, or ${esc(g.others.join('; '))}`:''}</p>
+      ${g.q?`<p class="q">Ask: ${esc(g.q)}</p>`:''}</li>`).join("")}</ul>`
+      : `<p class="empty">No gaps. Everything in this requirement traces to the regulation.</p>`;
+  return `<div class="split"><div class="list" role="list">${list}</div>
+    <section class="panel" aria-live="polite">
+      <div class="reqhead"><h3>${r.id} ${esc(r.title)}</h3><span class="lvl ${r.level}">${r.level} ${LV[r.level]}</span></div>
+      <p class="doc">${text}</p>
+      <h2>Regulation clauses it implements</h2><div class="links">${links}</div>
+      ${twin?`<h2>The regulation-only twin</h2>${twin}`:''}
+      <h2>Knowledge gaps (${r.gaps.length})</h2>${gaps}
+    </section></div>`;
+}
+
+function covView(){
+  const rows = D.clauses.map(c => `<tr><td><b>${c.id}</b></td><td>${esc(c.text)}</td>
+    <td>${c.status?`<span class="st st-${c.status}">${c.status}</span>`:''}</td>
+    <td>${c.by.join(", ")}</td><td>${esc(c.note)}</td></tr>`).join("");
+  return `<p class="note">Read the other way round: for each clause of the regulation, does any BRD requirement implement it?</p>
+    <div class="panel scroll"><table><thead><tr><th>Clause</th><th>Text</th><th>Covered</th><th>By</th><th>What's missing</th></tr></thead>
+    <tbody>${rows}</tbody></table></div>`;
+}
+
+function scoreView(){
+  const e = D.eval; if (!e.det) return `<p class="note">No answer key was provided, so there is nothing to score against.</p>`;
+  const row = (name, v) => `<tr><td>${name}</td><td>${v.found} of ${v.total}</td><td>${v.by_nature.surface[0]} of ${v.by_nature.surface[1]}</td>
+      <td>${v.by_nature.semantic[0]} of ${v.by_nature.semantic[1]}</td><td>${v.needs}</td><td>${Math.round(v.precision*100)}%</td></tr>`;
+  return `<p class="note">18 gaps were planted in the BRD before anything was run. This is how many each setup found.</p>
+    <div class="panel scroll"><table><thead><tr><th>Setup</th><th>Planted gaps found</th><th>Visible in the text</th><th>Only visible through meaning</th><th>Gaps raised</th><th>Matched a planted gap</th></tr></thead>
+    <tbody>${row("Rules only", e.det)}${row("Rules + LLM", e.full)}</tbody></table></div>
+    <p class="note">With the LLM step, the extra flags are the same gaps seen from the regulation's side, plus real gaps that were not planted.
+    The regulation, BRD and answer key are synthetic, and the LLM answers were produced by hand from the prompts, so this shows the method works end to end, not how accurate it is.</p>`;
+}
+
+function render(view){
+  const v = document.getElementById("view");
+  v.innerHTML = view === "cov" ? covView() : view === "score" ? scoreView() : reqView();
+  v.querySelectorAll("[data-req]").forEach(b => b.addEventListener("click", () => {
+    current = b.dataset.req; render("reqs");
+    const again = document.querySelector(`[data-req="${current}"]`); if (again) again.focus();
+  }));
+}
+document.querySelectorAll("nav button").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll("nav button").forEach(x => x.setAttribute("aria-selected", x === b));
+  render(b.dataset.view);
+}));
+render("reqs");
+</script>
+</body>
+</html>
