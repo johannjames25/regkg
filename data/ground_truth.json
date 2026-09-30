@@ -1,0 +1,23 @@
+{
+  "_note": "Gaps deliberately planted in brd.md, written before running the pipeline. 'terms' are used to match detected needs (case-insensitive substring match against a need's anchor text or premise text). 'nature' says whether a surface-level signal exists in the text (surface) or the gap only shows up through meaning (semantic).",
+  "gaps": [
+    {"id": "G01", "req": "BR-01", "nature": "surface", "type": "interpretation / conflict", "terms": ["12 business days", "T+12", "business days"], "desc": "Internal deadline of 12 business days can exceed the regulatory 15 calendar days. Rationale and calendar basis missing."},
+    {"id": "G02", "req": "BR-02", "nature": "surface", "type": "data lineage", "terms": ["LN_ACCT_DAILY", "OUTSTANDING_BAL"], "desc": "CBS table and field not defined; lineage to source missing."},
+    {"id": "G03", "req": "BR-02", "nature": "semantic", "type": "interpretation", "terms": ["accrued interest"], "desc": "Decision to include accrued interest in exposure is not in the regulation and has no stated rationale."},
+    {"id": "G04", "req": "BR-03", "nature": "surface", "type": "data lineage", "terms": ["TF_CONTINGENT", "SANCTION_LIMIT"], "desc": "Trade finance table and field not defined."},
+    {"id": "G05", "req": "BR-03", "nature": "semantic", "type": "interpretation", "terms": ["sanctioned limit", "undrawn", "utilised", "instead of outstanding"], "desc": "Uses sanctioned limit rather than outstanding contingent amount. A methodology decision with no rationale."},
+    {"id": "G06", "req": "BR-03", "nature": "surface", "type": "referenced document", "terms": ["Credit Risk Policy v4.2", "Annexure 3"], "desc": "Internal policy document referenced but not provided."},
+    {"id": "G07", "req": "BR-04", "nature": "surface", "type": "reference data", "terms": ["GROUP_ID"], "desc": "How GROUP_ID is assigned and maintained is not defined."},
+    {"id": "G08", "req": "BR-04", "nature": "surface", "type": "interpretation", "terms": ["where group_id is null", "registered address", "fallback"], "desc": "PAN / address fallback is a business interpretation of 'economic interdependence'. No rationale; address-based linkage is questionable."},
+    {"id": "G09", "req": "BR-05", "nature": "semantic", "type": "interpretation / conflict", "terms": ["same reporting quarter", "most recent"], "desc": "Regulation says most recent CAR return; BRD says same quarter's return, which may not yet be filed at reporting time."},
+    {"id": "G10", "req": "BR-07", "nature": "surface", "type": "reference data", "terms": ["SECTOR_CODE", "101", "102"], "desc": "Code list mapping sector codes to central government / central bank is missing."},
+    {"id": "G11", "req": "BR-08", "nature": "surface", "type": "scoping decision", "terms": ["not considered in this release", "government securities"], "desc": "Government securities collateral descoped from a regulatory permission. Decision rationale missing."},
+    {"id": "G12", "req": "BR-08", "nature": "semantic", "type": "system capability", "terms": ["lien module"], "desc": "CBS lien module capability assumed; not documented."},
+    {"id": "G13", "req": "BR-09", "nature": "surface", "type": "system", "terms": ["Murex"], "desc": "Treasury system not in glossary or any provided document."},
+    {"id": "G14", "req": "BR-09", "nature": "surface", "type": "data rule", "terms": ["SETTLE_DATE", "MATURITY_DATE"], "desc": "Intraday identification rule is a data heuristic with no source."},
+    {"id": "G15", "req": "BR-10", "nature": "surface", "type": "existing practice", "terms": ["INR lakhs", "two decimals"], "desc": "Unit and rounding convention not in the regulation; template spec not provided."},
+    {"id": "G16", "req": "BR-11", "nature": "surface", "type": "calculation parameter", "terms": ["1101", "1199", "0.5 percent", "GL heads"], "desc": "GL head mapping and 0.5% tolerance are business parameters without source."},
+    {"id": "G17", "req": "§7.1", "nature": "surface", "type": "coverage gap", "terms": ["7.1"], "desc": "No BRD requirement implements documented data lineage."},
+    {"id": "G18", "req": "§2.2", "nature": "semantic", "type": "coverage gap (partial)", "terms": ["2.2", "control"], "desc": "Control-based connection is not handled; BRD relies only on GROUP_ID / PAN / address."}
+  ]
+}

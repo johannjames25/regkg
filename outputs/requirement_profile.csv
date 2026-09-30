@@ -1,0 +1,12 @@
+req,title,level,anchors,reg_grounded,brd_grounded,ungrounded,needs,relations,twin
+BR-01,Frequency and submission,P3,2,1,0,1,1,"contradicts,entailed",The LE-1 report shall be submitted quarterly through the Authority's reporting portal within 15 calendar days of quarter end.
+BR-02,Funded exposure,P3,4,0,1,3,2,refines,Funded exposure shall include all on-balance sheet assets relating to the counterparty.
+BR-03,Non-funded exposure,P3,5,1,1,3,3,refines,Off-balance sheet items shall be converted to credit equivalent amounts using the Standardised Approach credit conversion factors.
+BR-04,Grouping of counterparties,P3,4,0,2,2,2,"entailed,refines","Counterparties shall be treated as a group of connected counterparties where one controls the other, or where they are economically interdependent."
+BR-05,Eligible capital base,P3,2,1,1,0,1,contradicts,The eligible capital base shall be the Tier 1 capital reported in the most recent capital adequacy return.
+BR-06,Reporting threshold,P0,2,2,0,0,0,entailed,"The report shall include every counterparty or group with exposure at or above 10 percent of eligible capital base, plus the 20 largest exposures."
+BR-07,Exempt exposures,P2,3,0,0,3,1,refines,Exposures to the central government and central bank shall be reported and marked as exempt from limits.
+BR-08,Collateral,P3,2,0,1,1,3,refines,Exposure value may be reduced by eligible cash and government securities collateral after Standardised Approach haircuts.
+BR-09,Interbank exposures,P2,3,0,0,3,2,refines,"Interbank exposures shall be reported, excluding intraday interbank exposures."
+BR-10,Output format,P3,3,1,0,2,1,refines,The report shall be submitted in the prescribed LE-1 format.
+BR-11,Reconciliation,P3,3,0,1,2,2,refines,Reported exposures shall be reconciled with the general ledger.

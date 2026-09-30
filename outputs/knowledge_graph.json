@@ -1,0 +1,1609 @@
+{
+ "directed": true,
+ "multigraph": true,
+ "graph": {},
+ "nodes": [
+  {
+   "layer": "regulation",
+   "type": "provision",
+   "text": "This Directive applies to all scheduled commercial banks.",
+   "origin": "REG",
+   "id": "\u00a71.1"
+  },
+  {
+   "layer": "regulation",
+   "type": "obligation",
+   "text": "Banks shall report large exposures on a quarterly basis.",
+   "origin": "REG",
+   "id": "\u00a71.2"
+  },
+  {
+   "layer": "regulation",
+   "type": "definition",
+   "text": "\"Exposure\" means all on-balance sheet assets and off-balance sheet items. Off-balance sheet items shall be converted into credit equivalent amounts using the credit conversion factors specified under the Standardised Approach for credit risk.",
+   "origin": "REG",
+   "id": "\u00a72.1"
+  },
+  {
+   "layer": "regulation",
+   "type": "definition",
+   "text": "\"Group of connected counterparties\" means two or more natural or legal persons where one of them has, directly or indirectly, control over the other or others; or between whom there is economic interdependence such that financial problems of one would likely result in repayment difficulties for the others.",
+   "origin": "REG",
+   "id": "\u00a72.2"
+  },
+  {
+   "layer": "regulation",
+   "type": "definition",
+   "text": "\"Eligible capital base\" means the Tier 1 capital of the bank as reported in its most recent capital adequacy return.",
+   "origin": "REG",
+   "id": "\u00a72.3"
+  },
+  {
+   "layer": "regulation",
+   "type": "obligation",
+   "text": "A bank shall report every exposure to a counterparty or a group of connected counterparties whose value is equal to or above 10 percent of its eligible capital base.",
+   "origin": "REG",
+   "id": "\u00a73.1"
+  },
+  {
+   "layer": "regulation",
+   "type": "obligation",
+   "text": "In addition, a bank shall report its 20 largest exposures, irrespective of the threshold in 3.1.",
+   "origin": "REG",
+   "id": "\u00a73.2"
+  },
+  {
+   "layer": "regulation",
+   "type": "exemption",
+   "text": "Exposures to the central government and the central bank are exempt from large exposure limits but shall nevertheless be reported.",
+   "origin": "REG",
+   "id": "\u00a74.1"
+  },
+  {
+   "layer": "regulation",
+   "type": "exemption",
+   "text": "Intraday interbank exposures shall be excluded from the report.",
+   "origin": "REG",
+   "id": "\u00a74.2"
+  },
+  {
+   "layer": "regulation",
+   "type": "obligation",
+   "text": "The exposure value may be reduced by eligible financial collateral, namely cash and government securities, after applying the haircuts specified under the Standardised Approach.",
+   "origin": "REG",
+   "id": "\u00a75.1"
+  },
+  {
+   "layer": "regulation",
+   "type": "obligation",
+   "text": "The report shall be submitted within 15 calendar days from the end of the quarter through the Authority's reporting portal in the prescribed format LE-1.",
+   "origin": "REG",
+   "id": "\u00a76.1"
+  },
+  {
+   "layer": "regulation",
+   "type": "obligation",
+   "text": "Banks shall maintain documented data lineage for all reported figures.",
+   "origin": "REG",
+   "id": "\u00a77.1"
+  },
+  {
+   "layer": "regulation",
+   "type": "obligation",
+   "text": "Reported exposures shall be reconciled with the general ledger.",
+   "origin": "REG",
+   "id": "\u00a77.2"
+  },
+  {
+   "layer": "brd",
+   "type": "glossary",
+   "text": "Core Banking System, holding loan accounts, deposits and liens.",
+   "origin": "BRD",
+   "id": "gl:CBS"
+  },
+  {
+   "layer": "brd",
+   "type": "glossary",
+   "text": "Customer Relationship Management system, holding the customer master.",
+   "origin": "BRD",
+   "id": "gl:CRM"
+  },
+  {
+   "layer": "brd",
+   "type": "glossary",
+   "text": "Trade Finance system.",
+   "origin": "BRD",
+   "id": "gl:TF"
+  },
+  {
+   "layer": "brd",
+   "type": "glossary",
+   "text": "the capital adequacy return submitted to the Authority.",
+   "origin": "BRD",
+   "id": "gl:CAR return"
+  },
+  {
+   "layer": "brd",
+   "type": "glossary",
+   "text": "Permanent Account Number, the tax identifier of a customer.",
+   "origin": "BRD",
+   "id": "gl:PAN"
+  },
+  {
+   "layer": "brd",
+   "type": "glossary",
+   "text": "General Ledger.",
+   "origin": "BRD",
+   "id": "gl:GL"
+  },
+  {
+   "layer": "brd",
+   "type": "glossary",
+   "text": "the Authority's prescribed large exposures template.",
+   "origin": "BRD",
+   "id": "gl:LE-1"
+  },
+  {
+   "layer": "brd",
+   "type": "requirement",
+   "text": "The LE-1 report shall be generated quarterly and submitted through the Authority's reporting portal no later than T+12 business days after quarter end.",
+   "origin": "BRD",
+   "id": "BR-01"
+  },
+  {
+   "layer": "bridge",
+   "type": "DOC_REF",
+   "text": "LE-1",
+   "grounding": "REG",
+   "id": "anchor:DOC_REF:LE-1"
+  },
+  {
+   "layer": "bridge",
+   "type": "PARAMETER",
+   "text": "T+12 business days",
+   "grounding": "NONE",
+   "id": "anchor:PARAMETER:T+12 business days"
+  },
+  {
+   "layer": "brd",
+   "type": "requirement",
+   "text": "Funded exposure per customer shall be the sum of OUTSTANDING_BAL and ACCR_INT from CBS table LN_ACCT_DAILY as of the quarter-end date.",
+   "origin": "BRD",
+   "id": "BR-02"
+  },
+  {
+   "layer": "bridge",
+   "type": "DATA_FIELD",
+   "text": "OUTSTANDING_BAL",
+   "grounding": "NONE",
+   "id": "anchor:DATA_FIELD:OUTSTANDING_BAL"
+  },
+  {
+   "layer": "bridge",
+   "type": "DATA_FIELD",
+   "text": "ACCR_INT",
+   "grounding": "NONE",
+   "id": "anchor:DATA_FIELD:ACCR_INT"
+  },
+  {
+   "layer": "bridge",
+   "type": "DATA_FIELD",
+   "text": "LN_ACCT_DAILY",
+   "grounding": "NONE",
+   "id": "anchor:DATA_FIELD:LN_ACCT_DAILY"
+  },
+  {
+   "layer": "bridge",
+   "type": "ACRONYM",
+   "text": "CBS",
+   "grounding": "BRD",
+   "id": "anchor:ACRONYM:CBS"
+  },
+  {
+   "layer": "brd",
+   "type": "requirement",
+   "text": "Non-funded exposure shall be computed as SANCTION_LIMIT from TF table TF_CONTINGENT multiplied by the CCF, where the CCF is taken from the CCF master in Credit Risk Policy v4.2, Annexure 3.",
+   "origin": "BRD",
+   "id": "BR-03"
+  },
+  {
+   "layer": "bridge",
+   "type": "DOC_REF",
+   "text": "Credit Risk Policy v4.2, Annexure 3",
+   "grounding": "NONE",
+   "id": "anchor:DOC_REF:Credit Risk Policy v4.2, Annexure 3"
+  },
+  {
+   "layer": "bridge",
+   "type": "DATA_FIELD",
+   "text": "SANCTION_LIMIT",
+   "grounding": "NONE",
+   "id": "anchor:DATA_FIELD:SANCTION_LIMIT"
+  },
+  {
+   "layer": "bridge",
+   "type": "DATA_FIELD",
+   "text": "TF_CONTINGENT",
+   "grounding": "NONE",
+   "id": "anchor:DATA_FIELD:TF_CONTINGENT"
+  },
+  {
+   "layer": "bridge",
+   "type": "ACRONYM",
+   "text": "TF",
+   "grounding": "BRD",
+   "id": "anchor:ACRONYM:TF"
+  },
+  {
+   "layer": "bridge",
+   "type": "ACRONYM",
+   "text": "CCF",
+   "grounding": "REG",
+   "id": "anchor:ACRONYM:CCF"
+  },
+  {
+   "layer": "brd",
+   "type": "requirement",
+   "text": "Counterparties shall be grouped using the GROUP_ID field in the CRM customer master. Where GROUP_ID is null, customers sharing the same PAN or the same registered address shall be treated as a group of connected counterparties.",
+   "origin": "BRD",
+   "id": "BR-04"
+  },
+  {
+   "layer": "bridge",
+   "type": "DATA_FIELD",
+   "text": "GROUP_ID",
+   "grounding": "NONE",
+   "id": "anchor:DATA_FIELD:GROUP_ID"
+  },
+  {
+   "layer": "bridge",
+   "type": "ACRONYM",
+   "text": "CRM",
+   "grounding": "BRD",
+   "id": "anchor:ACRONYM:CRM"
+  },
+  {
+   "layer": "bridge",
+   "type": "ACRONYM",
+   "text": "PAN",
+   "grounding": "BRD",
+   "id": "anchor:ACRONYM:PAN"
+  },
+  {
+   "layer": "bridge",
+   "type": "DECISION",
+   "text": "Where GROUP_ID is null, customers sharing the same PAN or the same registered address shall be treated as a group of connected counterparties.",
+   "grounding": "NONE",
+   "id": "anchor:DECISION:Where GROUP_ID is null, customers sharin"
+  },
+  {
+   "layer": "brd",
+   "type": "requirement",
+   "text": "The eligible capital base shall be the Tier 1 capital figure from the CAR return for the same reporting quarter.",
+   "origin": "BRD",
+   "id": "BR-05"
+  },
+  {
+   "layer": "bridge",
+   "type": "PARAMETER",
+   "text": "1",
+   "grounding": "REG",
+   "id": "anchor:PARAMETER:1"
+  },
+  {
+   "layer": "bridge",
+   "type": "ACRONYM",
+   "text": "CAR",
+   "grounding": "BRD",
+   "id": "anchor:ACRONYM:CAR"
+  },
+  {
+   "layer": "brd",
+   "type": "requirement",
+   "text": "The report shall include every counterparty or group with total exposure equal to or above 10 percent of the eligible capital base, and additionally the 20 largest exposures.",
+   "origin": "BRD",
+   "id": "BR-06"
+  },
+  {
+   "layer": "bridge",
+   "type": "PARAMETER",
+   "text": "10 percent",
+   "grounding": "REG",
+   "id": "anchor:PARAMETER:10 percent"
+  },
+  {
+   "layer": "bridge",
+   "type": "PARAMETER",
+   "text": "20",
+   "grounding": "REG",
+   "id": "anchor:PARAMETER:20"
+  },
+  {
+   "layer": "brd",
+   "type": "requirement",
+   "text": "Exposures to customers with SECTOR_CODE 101 or 102 shall be flagged as exempt and included in the report.",
+   "origin": "BRD",
+   "id": "BR-07"
+  },
+  {
+   "layer": "bridge",
+   "type": "DATA_FIELD",
+   "text": "SECTOR_CODE",
+   "grounding": "NONE",
+   "id": "anchor:DATA_FIELD:SECTOR_CODE"
+  },
+  {
+   "layer": "bridge",
+   "type": "PARAMETER",
+   "text": "101",
+   "grounding": "NONE",
+   "id": "anchor:PARAMETER:101"
+  },
+  {
+   "layer": "bridge",
+   "type": "PARAMETER",
+   "text": "102",
+   "grounding": "NONE",
+   "id": "anchor:PARAMETER:102"
+  },
+  {
+   "layer": "brd",
+   "type": "requirement",
+   "text": "Exposure shall be reduced by cash collateral held under lien in the CBS lien module. Government securities collateral is not considered in this release.",
+   "origin": "BRD",
+   "id": "BR-08"
+  },
+  {
+   "layer": "bridge",
+   "type": "DECISION",
+   "text": "Government securities collateral is not considered in this release.",
+   "grounding": "NONE",
+   "id": "anchor:DECISION:Government securities collateral is not "
+  },
+  {
+   "layer": "brd",
+   "type": "requirement",
+   "text": "Interbank placements from the Murex treasury system shall be included. Intraday placements shall be excluded where SETTLE_DATE equals MATURITY_DATE.",
+   "origin": "BRD",
+   "id": "BR-09"
+  },
+  {
+   "layer": "bridge",
+   "type": "DATA_FIELD",
+   "text": "SETTLE_DATE",
+   "grounding": "NONE",
+   "id": "anchor:DATA_FIELD:SETTLE_DATE"
+  },
+  {
+   "layer": "bridge",
+   "type": "DATA_FIELD",
+   "text": "MATURITY_DATE",
+   "grounding": "NONE",
+   "id": "anchor:DATA_FIELD:MATURITY_DATE"
+  },
+  {
+   "layer": "bridge",
+   "type": "SYSTEM",
+   "text": "Murex",
+   "grounding": "NONE",
+   "id": "anchor:SYSTEM:Murex"
+  },
+  {
+   "layer": "brd",
+   "type": "requirement",
+   "text": "Amounts shall be reported in INR lakhs, rounded to two decimals, in the LE-1 layout.",
+   "origin": "BRD",
+   "id": "BR-10"
+  },
+  {
+   "layer": "bridge",
+   "type": "UNIT",
+   "text": "INR lakhs",
+   "grounding": "NONE",
+   "id": "anchor:UNIT:INR lakhs"
+  },
+  {
+   "layer": "bridge",
+   "type": "UNIT",
+   "text": "two decimals",
+   "grounding": "NONE",
+   "id": "anchor:UNIT:two decimals"
+  },
+  {
+   "layer": "brd",
+   "type": "requirement",
+   "text": "Total funded exposure shall reconcile to GL heads 1101-1199 within a tolerance of 0.5 percent.",
+   "origin": "BRD",
+   "id": "BR-11"
+  },
+  {
+   "layer": "bridge",
+   "type": "PARAMETER",
+   "text": "1101-1199",
+   "grounding": "NONE",
+   "id": "anchor:PARAMETER:1101-1199"
+  },
+  {
+   "layer": "bridge",
+   "type": "PARAMETER",
+   "text": "0.5 percent",
+   "grounding": "NONE",
+   "id": "anchor:PARAMETER:0.5 percent"
+  },
+  {
+   "layer": "bridge",
+   "type": "ACRONYM",
+   "text": "GL",
+   "grounding": "BRD",
+   "id": "anchor:ACRONYM:GL"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "OPERATIONAL_PRACTICE",
+   "level": "P3",
+   "text": "Why the internal deadline is T+12 business days, and whether it was meant to fall inside 15 calendar days (12 business days is usually 16-18 calendar days).",
+   "conflict": true,
+   "id": "KN-01"
+  },
+  {
+   "layer": "source",
+   "type": "SourceType",
+   "text": "Regulatory calendar / submission SOP",
+   "id": "src:Regulatory calendar / submission SOP"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "DATA_LINEAGE",
+   "level": "P2",
+   "text": "Which system table and fields hold on-balance sheet loan balances (LN_ACCT_DAILY.OUTSTANDING_BAL).",
+   "conflict": false,
+   "id": "KN-02"
+  },
+  {
+   "layer": "source",
+   "type": "SourceType",
+   "text": "CBS data dictionary (or enterprise metadata catalog)",
+   "id": "src:CBS data dictionary (or enterprise metadata catalog)"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "REFERENCED_DOCUMENT",
+   "level": "P2",
+   "text": "CCF values per product come from Credit Risk Policy v4.2, Annexure 3, an internal document, rather than directly from the Standardised Approach.",
+   "conflict": false,
+   "id": "KN-03"
+  },
+  {
+   "layer": "source",
+   "type": "SourceType",
+   "text": "Policy repository / document management system",
+   "id": "src:Policy repository / document management system"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "DATA_LINEAGE",
+   "level": "P2",
+   "text": "Which Trade Finance table and field represent off-balance sheet items (TF_CONTINGENT.SANCTION_LIMIT).",
+   "conflict": false,
+   "id": "KN-04"
+  },
+  {
+   "layer": "source",
+   "type": "SourceType",
+   "text": "TF data dictionary (or enterprise metadata catalog)",
+   "id": "src:TF data dictionary (or enterprise metadata catalog)"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "REFERENCE_DATA",
+   "level": "P2",
+   "text": "How GROUP_ID is assigned and maintained in the CRM customer master, and whether it captures control relationships. | Control relationships (ownership, board control) are not addressed when GROUP_ID is populated but incomplete.",
+   "conflict": false,
+   "id": "KN-05"
+  },
+  {
+   "layer": "source",
+   "type": "SourceType",
+   "text": "Reference data / code list master",
+   "id": "src:Reference data / code list master"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "REGULATORY_INTERPRETATION",
+   "level": "P3",
+   "text": "Interpretation that shared PAN or shared registered address indicates economic interdependence (fallback rule).",
+   "conflict": false,
+   "id": "KN-06"
+  },
+  {
+   "layer": "source",
+   "type": "SourceType",
+   "text": "Compliance interpretation memos",
+   "id": "src:Compliance interpretation memos"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "REFERENCE_DATA",
+   "level": "P2",
+   "text": "Mapping of SECTOR_CODE values 101 and 102 to central government and central bank.",
+   "conflict": false,
+   "id": "KN-07"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "SCOPING_DECISION",
+   "level": "P3",
+   "text": "Decision to exclude government securities collateral in this release, although the regulation permits it.",
+   "conflict": false,
+   "id": "KN-08"
+  },
+  {
+   "layer": "source",
+   "type": "SourceType",
+   "text": "Change requests / JIRA",
+   "id": "src:Change requests / JIRA"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "DATA_LINEAGE",
+   "level": "P2",
+   "text": "Heuristic: SETTLE_DATE equals MATURITY_DATE identifies intraday placements.",
+   "conflict": false,
+   "id": "KN-09"
+  },
+  {
+   "layer": "source",
+   "type": "SourceType",
+   "text": "Murex data dictionary (or enterprise metadata catalog)",
+   "id": "src:Murex data dictionary (or enterprise metadata catalog)"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "SYSTEM_CAPABILITY",
+   "level": "P2",
+   "text": "Murex is the system of record for interbank placements.",
+   "conflict": false,
+   "id": "KN-10"
+  },
+  {
+   "layer": "source",
+   "type": "SourceType",
+   "text": "Application inventory / architecture documents",
+   "id": "src:Application inventory / architecture documents"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "OPERATIONAL_PRACTICE",
+   "level": "P3",
+   "text": "Unit (INR lakhs) and rounding convention, presumably from the LE-1 template specification or past practice.",
+   "conflict": false,
+   "id": "KN-11"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "PARAMETER",
+   "level": "P3",
+   "text": "GL heads 1101-1199 represent funded exposure in the chart of accounts. | 0.5 percent reconciliation tolerance.",
+   "conflict": false,
+   "id": "KN-12"
+  },
+  {
+   "layer": "source",
+   "type": "SourceType",
+   "text": "Reconciliation or control policy",
+   "id": "src:Reconciliation or control policy"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "REGULATORY_INTERPRETATION",
+   "level": "P3",
+   "text": "Decision that accrued interest forms part of exposure value.",
+   "conflict": false,
+   "id": "KN-13"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "CALCULATION_METHOD",
+   "level": "P3",
+   "text": "Methodology choice to apply the CCF to the sanctioned limit instead of outstanding contingent amount; affects undrawn portions.",
+   "conflict": false,
+   "id": "KN-14"
+  },
+  {
+   "layer": "source",
+   "type": "SourceType",
+   "text": "Risk methodology documents",
+   "id": "src:Risk methodology documents"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "OPERATIONAL_PRACTICE",
+   "level": "P3",
+   "text": "Timing choice: BRD uses the same reporting quarter's CAR return, while the regulation says most recent; the same-quarter return may not be filed when LE-1 is due.",
+   "conflict": true,
+   "id": "KN-15"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "SYSTEM_CAPABILITY",
+   "level": "P2",
+   "text": "CBS lien module can reliably identify cash collateral under lien per exposure.",
+   "conflict": false,
+   "id": "KN-16"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "CALCULATION_METHOD",
+   "level": "P3",
+   "text": "No haircut treatment specified for cash collateral.",
+   "conflict": false,
+   "id": "KN-17"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "SCOPING_DECISION",
+   "level": "P3",
+   "text": "Only funded exposure is reconciled; non-funded exposure has no reconciliation.",
+   "conflict": false,
+   "id": "KN-18"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "COVERAGE",
+   "level": "P3",
+   "text": "No requirement for documented data lineage.",
+   "conflict": false,
+   "id": "KN-19"
+  },
+  {
+   "layer": "source",
+   "type": "SourceType",
+   "text": "Compliance obligations register",
+   "id": "src:Compliance obligations register"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "COVERAGE",
+   "level": "P3",
+   "text": "Control-based connection not handled.",
+   "conflict": false,
+   "id": "KN-20"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "COVERAGE",
+   "level": "P3",
+   "text": "Timing differs (same quarter vs most recent).",
+   "conflict": false,
+   "id": "KN-21"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "COVERAGE",
+   "level": "P3",
+   "text": "Government securities descoped.",
+   "conflict": false,
+   "id": "KN-22"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "COVERAGE",
+   "level": "P3",
+   "text": "Deadline basis conflicts.",
+   "conflict": false,
+   "id": "KN-23"
+  },
+  {
+   "layer": "bridge",
+   "type": "KnowledgeNeed",
+   "knowledge_type": "COVERAGE",
+   "level": "P3",
+   "text": "Only funded exposure reconciled.",
+   "conflict": false,
+   "id": "KN-24"
+  }
+ ],
+ "edges": [
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "\u00a72.2",
+   "target": "KN-20",
+   "key": 0
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "\u00a72.3",
+   "target": "KN-21",
+   "key": 0
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "\u00a75.1",
+   "target": "KN-22",
+   "key": 0
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "\u00a76.1",
+   "target": "KN-23",
+   "key": 0
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "\u00a77.1",
+   "target": "KN-19",
+   "key": 0
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "\u00a77.2",
+   "target": "KN-24",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-01",
+   "target": "anchor:DOC_REF:LE-1",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-01",
+   "target": "anchor:PARAMETER:T+12 business days",
+   "key": 0
+  },
+  {
+   "rel": "implements",
+   "origin": "INFERRED",
+   "method": "lexical",
+   "score": 0.212,
+   "source": "BR-01",
+   "target": "\u00a71.2",
+   "key": 0
+  },
+  {
+   "rel": "entailed",
+   "origin": "INFERRED",
+   "method": "llm",
+   "source": "BR-01",
+   "target": "\u00a71.2",
+   "key": 1
+  },
+  {
+   "rel": "implements",
+   "origin": "INFERRED",
+   "method": "lexical",
+   "score": 0.483,
+   "source": "BR-01",
+   "target": "\u00a76.1",
+   "key": 0
+  },
+  {
+   "rel": "contradicts",
+   "origin": "INFERRED",
+   "method": "llm",
+   "source": "BR-01",
+   "target": "\u00a76.1",
+   "key": 1
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "BR-01",
+   "target": "KN-01",
+   "key": 0
+  },
+  {
+   "rel": "grounded_in",
+   "origin": "REG",
+   "source": "anchor:DOC_REF:LE-1",
+   "target": "\u00a76.1",
+   "key": 0
+  },
+  {
+   "rel": "grounded_in",
+   "origin": "REG",
+   "source": "anchor:DOC_REF:LE-1",
+   "target": "\u00a76.1",
+   "key": 1
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-02",
+   "target": "anchor:DATA_FIELD:OUTSTANDING_BAL",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-02",
+   "target": "anchor:DATA_FIELD:ACCR_INT",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-02",
+   "target": "anchor:DATA_FIELD:LN_ACCT_DAILY",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-02",
+   "target": "anchor:ACRONYM:CBS",
+   "key": 0
+  },
+  {
+   "rel": "refines",
+   "origin": "INFERRED",
+   "method": "llm",
+   "source": "BR-02",
+   "target": "\u00a72.1",
+   "key": 0
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "BR-02",
+   "target": "KN-02",
+   "key": 0
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "BR-02",
+   "target": "KN-13",
+   "key": 0
+  },
+  {
+   "rel": "defined_by",
+   "origin": "BRD",
+   "source": "anchor:ACRONYM:CBS",
+   "target": "gl:CBS",
+   "key": 0
+  },
+  {
+   "rel": "defined_by",
+   "origin": "BRD",
+   "source": "anchor:ACRONYM:CBS",
+   "target": "gl:CBS",
+   "key": 1
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-03",
+   "target": "anchor:DOC_REF:Credit Risk Policy v4.2, Annexure 3",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-03",
+   "target": "anchor:DATA_FIELD:SANCTION_LIMIT",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-03",
+   "target": "anchor:DATA_FIELD:TF_CONTINGENT",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-03",
+   "target": "anchor:ACRONYM:TF",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-03",
+   "target": "anchor:ACRONYM:CCF",
+   "key": 0
+  },
+  {
+   "rel": "refines",
+   "origin": "INFERRED",
+   "method": "llm",
+   "source": "BR-03",
+   "target": "\u00a72.1",
+   "key": 0
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "BR-03",
+   "target": "KN-03",
+   "key": 0
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "BR-03",
+   "target": "KN-04",
+   "key": 0
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "BR-03",
+   "target": "KN-14",
+   "key": 0
+  },
+  {
+   "rel": "defined_by",
+   "origin": "BRD",
+   "source": "anchor:ACRONYM:TF",
+   "target": "gl:TF",
+   "key": 0
+  },
+  {
+   "rel": "grounded_in",
+   "origin": "REG",
+   "source": "anchor:ACRONYM:CCF",
+   "target": "\u00a72.1",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-04",
+   "target": "anchor:DATA_FIELD:GROUP_ID",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-04",
+   "target": "anchor:ACRONYM:CRM",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-04",
+   "target": "anchor:ACRONYM:PAN",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-04",
+   "target": "anchor:DECISION:Where GROUP_ID is null, customers sharin",
+   "key": 0
+  },
+  {
+   "rel": "implements",
+   "origin": "INFERRED",
+   "method": "lexical",
+   "score": 0.191,
+   "source": "BR-04",
+   "target": "\u00a73.1",
+   "key": 0
+  },
+  {
+   "rel": "entailed",
+   "origin": "INFERRED",
+   "method": "llm",
+   "source": "BR-04",
+   "target": "\u00a73.1",
+   "key": 1
+  },
+  {
+   "rel": "refines",
+   "origin": "INFERRED",
+   "method": "llm",
+   "source": "BR-04",
+   "target": "\u00a72.2",
+   "key": 0
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "BR-04",
+   "target": "KN-05",
+   "key": 0
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "BR-04",
+   "target": "KN-06",
+   "key": 0
+  },
+  {
+   "rel": "defined_by",
+   "origin": "BRD",
+   "source": "anchor:ACRONYM:CRM",
+   "target": "gl:CRM",
+   "key": 0
+  },
+  {
+   "rel": "defined_by",
+   "origin": "BRD",
+   "source": "anchor:ACRONYM:PAN",
+   "target": "gl:PAN",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-05",
+   "target": "anchor:PARAMETER:1",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-05",
+   "target": "anchor:ACRONYM:CAR",
+   "key": 0
+  },
+  {
+   "rel": "implements",
+   "origin": "INFERRED",
+   "method": "lexical",
+   "score": 0.603,
+   "source": "BR-05",
+   "target": "\u00a72.3",
+   "key": 0
+  },
+  {
+   "rel": "contradicts",
+   "origin": "INFERRED",
+   "method": "llm",
+   "source": "BR-05",
+   "target": "\u00a72.3",
+   "key": 1
+  },
+  {
+   "rel": "implements",
+   "origin": "INFERRED",
+   "method": "lexical",
+   "score": 0.232,
+   "source": "BR-05",
+   "target": "\u00a73.1",
+   "key": 0
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "BR-05",
+   "target": "KN-15",
+   "key": 0
+  },
+  {
+   "rel": "grounded_in",
+   "origin": "REG",
+   "source": "anchor:PARAMETER:1",
+   "target": "\u00a72.3",
+   "key": 0
+  },
+  {
+   "rel": "defined_by",
+   "origin": "BRD",
+   "source": "anchor:ACRONYM:CAR",
+   "target": "gl:CAR return",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-06",
+   "target": "anchor:PARAMETER:10 percent",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-06",
+   "target": "anchor:PARAMETER:20",
+   "key": 0
+  },
+  {
+   "rel": "implements",
+   "origin": "INFERRED",
+   "method": "lexical",
+   "score": 0.605,
+   "source": "BR-06",
+   "target": "\u00a73.1",
+   "key": 0
+  },
+  {
+   "rel": "entailed",
+   "origin": "INFERRED",
+   "method": "llm",
+   "source": "BR-06",
+   "target": "\u00a73.1",
+   "key": 1
+  },
+  {
+   "rel": "implements",
+   "origin": "INFERRED",
+   "method": "lexical",
+   "score": 0.258,
+   "source": "BR-06",
+   "target": "\u00a73.2",
+   "key": 0
+  },
+  {
+   "rel": "entailed",
+   "origin": "INFERRED",
+   "method": "llm",
+   "source": "BR-06",
+   "target": "\u00a73.2",
+   "key": 1
+  },
+  {
+   "rel": "grounded_in",
+   "origin": "REG",
+   "source": "anchor:PARAMETER:10 percent",
+   "target": "\u00a73.1",
+   "key": 0
+  },
+  {
+   "rel": "grounded_in",
+   "origin": "REG",
+   "source": "anchor:PARAMETER:20",
+   "target": "\u00a73.2",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-07",
+   "target": "anchor:DATA_FIELD:SECTOR_CODE",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-07",
+   "target": "anchor:PARAMETER:101",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-07",
+   "target": "anchor:PARAMETER:102",
+   "key": 0
+  },
+  {
+   "rel": "implements",
+   "origin": "INFERRED",
+   "method": "lexical",
+   "score": 0.182,
+   "source": "BR-07",
+   "target": "\u00a74.1",
+   "key": 0
+  },
+  {
+   "rel": "refines",
+   "origin": "INFERRED",
+   "method": "llm",
+   "source": "BR-07",
+   "target": "\u00a74.1",
+   "key": 1
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "BR-07",
+   "target": "KN-07",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-08",
+   "target": "anchor:ACRONYM:CBS",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-08",
+   "target": "anchor:DECISION:Government securities collateral is not ",
+   "key": 0
+  },
+  {
+   "rel": "implements",
+   "origin": "INFERRED",
+   "method": "lexical",
+   "score": 0.304,
+   "source": "BR-08",
+   "target": "\u00a75.1",
+   "key": 0
+  },
+  {
+   "rel": "refines",
+   "origin": "INFERRED",
+   "method": "llm",
+   "source": "BR-08",
+   "target": "\u00a75.1",
+   "key": 1
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "BR-08",
+   "target": "KN-08",
+   "key": 0
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "BR-08",
+   "target": "KN-16",
+   "key": 0
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "BR-08",
+   "target": "KN-17",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-09",
+   "target": "anchor:DATA_FIELD:SETTLE_DATE",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-09",
+   "target": "anchor:DATA_FIELD:MATURITY_DATE",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-09",
+   "target": "anchor:SYSTEM:Murex",
+   "key": 0
+  },
+  {
+   "rel": "implements",
+   "origin": "INFERRED",
+   "method": "lexical",
+   "score": 0.46,
+   "source": "BR-09",
+   "target": "\u00a74.2",
+   "key": 0
+  },
+  {
+   "rel": "refines",
+   "origin": "INFERRED",
+   "method": "llm",
+   "source": "BR-09",
+   "target": "\u00a74.2",
+   "key": 1
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "BR-09",
+   "target": "KN-09",
+   "key": 0
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "BR-09",
+   "target": "KN-10",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-10",
+   "target": "anchor:DOC_REF:LE-1",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-10",
+   "target": "anchor:UNIT:INR lakhs",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-10",
+   "target": "anchor:UNIT:two decimals",
+   "key": 0
+  },
+  {
+   "rel": "implements",
+   "origin": "INFERRED",
+   "method": "lexical",
+   "score": 0.19,
+   "source": "BR-10",
+   "target": "\u00a76.1",
+   "key": 0
+  },
+  {
+   "rel": "refines",
+   "origin": "INFERRED",
+   "method": "llm",
+   "source": "BR-10",
+   "target": "\u00a76.1",
+   "key": 1
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "BR-10",
+   "target": "KN-11",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-11",
+   "target": "anchor:PARAMETER:1101-1199",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-11",
+   "target": "anchor:PARAMETER:0.5 percent",
+   "key": 0
+  },
+  {
+   "rel": "mentions",
+   "origin": "BRD",
+   "source": "BR-11",
+   "target": "anchor:ACRONYM:GL",
+   "key": 0
+  },
+  {
+   "rel": "implements",
+   "origin": "INFERRED",
+   "method": "lexical",
+   "score": 0.295,
+   "source": "BR-11",
+   "target": "\u00a77.2",
+   "key": 0
+  },
+  {
+   "rel": "refines",
+   "origin": "INFERRED",
+   "method": "llm",
+   "source": "BR-11",
+   "target": "\u00a77.2",
+   "key": 1
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "BR-11",
+   "target": "KN-12",
+   "key": 0
+  },
+  {
+   "rel": "requires",
+   "origin": "INFERRED",
+   "source": "BR-11",
+   "target": "KN-18",
+   "key": 0
+  },
+  {
+   "rel": "defined_by",
+   "origin": "BRD",
+   "source": "anchor:ACRONYM:GL",
+   "target": "gl:GL",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-01",
+   "target": "src:Regulatory calendar / submission SOP",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-02",
+   "target": "src:CBS data dictionary (or enterprise metadata catalog)",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-03",
+   "target": "src:Policy repository / document management system",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-04",
+   "target": "src:TF data dictionary (or enterprise metadata catalog)",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-05",
+   "target": "src:Reference data / code list master",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-06",
+   "target": "src:Compliance interpretation memos",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-07",
+   "target": "src:Reference data / code list master",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-08",
+   "target": "src:Change requests / JIRA",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-09",
+   "target": "src:Murex data dictionary (or enterprise metadata catalog)",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-10",
+   "target": "src:Application inventory / architecture documents",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-11",
+   "target": "src:Regulatory calendar / submission SOP",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-12",
+   "target": "src:Reconciliation or control policy",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-13",
+   "target": "src:Compliance interpretation memos",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-14",
+   "target": "src:Risk methodology documents",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-15",
+   "target": "src:Regulatory calendar / submission SOP",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-16",
+   "target": "src:Application inventory / architecture documents",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-17",
+   "target": "src:Risk methodology documents",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-18",
+   "target": "src:Change requests / JIRA",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-19",
+   "target": "src:Compliance obligations register",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-20",
+   "target": "src:Compliance obligations register",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-21",
+   "target": "src:Compliance obligations register",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-22",
+   "target": "src:Compliance obligations register",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-23",
+   "target": "src:Compliance obligations register",
+   "key": 0
+  },
+  {
+   "rel": "may_be_resolved_by",
+   "origin": "INFERRED",
+   "source": "KN-24",
+   "target": "src:Compliance obligations register",
+   "key": 0
+  }
+ ]
+}
